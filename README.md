@@ -88,4 +88,4 @@ yourHeader = new framerKit.TableViewHeader
 
 # Questions
 
-Feel free to contact the project's maintainer, Raph D'Amico, on raph-at-gmail-dot-com or @raphdamico on Twitter.
+Feel free to contact me, Raph D'Amico, on raph-at-gmail-dot-com or @raphdamico on Twitter.
