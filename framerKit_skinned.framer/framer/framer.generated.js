@@ -10,7 +10,7 @@ window.Framer.Defaults.DeviceView = {
 
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
-  "documentTitle" : "framerKit_yellow.framer"
+  "documentTitle" : "framerKit_skinned.framer"
 };
 
 Framer.Device = new Framer.DeviceView();
