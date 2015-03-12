@@ -1,9 +1,9 @@
 # FramerKit
 iOS Picker & Table View controls recreated in Framer, for your prototyping pleasure. 
 
-I love design patterns, so end up using these all the time to make prototypes in my day to day at [Timeful](http://timeful.com). With the release of Framer's awesome new Modules, now seemed the time to put them out into the world!
+In my day to day as a designer at [Timeful](http://timeful.com), I've been increasingly making modular components to work through complex interactions with a lot of states and dynamic copy. Framer's awesome new Modules seemed like a perfect way to put them out into the world.
 
-Let me know what you think [@raphdamico](http://twitter.com/raphdamico).
+Let me know what you think [@raphdamico](http://twitter.com/raphdamico)!
 
 
 #Demos 
@@ -83,3 +83,8 @@ yourHeader = new framerKit.TableViewHeader
 	y: 10
 	text: 'Header text!'
 ```
+
+
+# Questions
+
+Feel free to contact the project's maintainer, Raph D'Amico, on raph-at-gmail-dot-com or @raphdamico on Twitter.
