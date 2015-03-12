@@ -65,7 +65,7 @@ Switch = (params) ->
 		switchContainerWidth: 94
 		borderColor: defaults.lineTint # Grey rounded pill & borders between cells
 
-	@selected = false
+	@selected = true
 	
 	# Some of the values are based on other constants,
 	# so you have to calculate them in a second pass
@@ -148,6 +148,8 @@ Switch = (params) ->
 	if @selected == false
 		@switchBackground.states.switchInstant("deselected")
 		@switchButton.states.switchInstant("deselected")
+	else
+		@switchBackground.backgroundColor = params.switchTint
 
 	return @switchButtonContainer
 	
@@ -282,7 +284,7 @@ exports.TableViewRow = (params) ->
 		x: 0
 		y: 0
 		enabled: true
-		selected: false
+		selected: true
 		icon: 'check'
 		textColor: defaults.tint
 		switchTint: 'green'
