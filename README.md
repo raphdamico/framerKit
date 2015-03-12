@@ -66,7 +66,7 @@ yourPicker.on 'PickerDidChange', (drums, layer)->
 
 ## Table view
 
-You can create whole TableViews or just single rows (which fire a custom event when they change). 
+You can create whole TableViews or just single rows. Both fire a 'DidChange' event when they change.
 
 ```
 yourTableView = new framerKit.TableView 
@@ -75,7 +75,6 @@ yourTableView = new framerKit.TableView
     items: ["Eggs", "Bacon", "Beans"] # Any array
     icon: ['switch'|'cross'|'check'|'caret']
     validation: ['none', 'radio']
-
 ```
 
 Bonus, there's also a TableViewHeader.
