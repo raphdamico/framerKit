@@ -95,7 +95,6 @@ sessionLengthPickerDidChange = (drums, layer) ->
 	endTime 	= drumValuesInHours[drums["rightDrum"].index]
 	leftDrum 	= sessionLengthPicker.drumsByName['leftDrum']
 	rightDrum	= sessionLengthPicker.drumsByName['rightDrum']
-	pickerHeaderText = sessionLengthPicker.pickerHeader.html
 	
 	if endTime < startTime
 		leftDrum.setIndex(drumValuesInHours.indexOf(startTime))
@@ -104,9 +103,9 @@ sessionLengthPickerDidChange = (drums, layer) ->
 		rightDrum.setIndex(Math.min(drumValuesInHours.indexOf(startTime)+1, drumValuesInHours.length-1))
 		
 	if endTime == startTime
-		pickerHeaderText = "Session will last " + rightDrum.val
+		sessionLengthPicker.pickerHeader.html = "Session will last " + rightDrum.val
 	else 
-		pickerHeaderText = "Session will last " + leftDrum.val + " to " + rightDrum.val
+		sessionLengthPicker.pickerHeader.html = "Session will last " + leftDrum.val + " to " + rightDrum.val
 
 sessionLengthPicker.on "PickerFinishedChanging", sessionLengthPickerDidChange
 

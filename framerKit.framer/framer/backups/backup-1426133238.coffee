@@ -91,6 +91,7 @@ sessionLengthPicker.superLayer = container
 # Validation to stop you selecting a range where the
 # right drum is a smaller value than the left one
 sessionLengthPickerDidChange = (drums, layer) ->
+	pr
 	startTime 	= drumValuesInHours[drums["leftDrum"].index]
 	endTime 	= drumValuesInHours[drums["rightDrum"].index]
 	leftDrum 	= sessionLengthPicker.drumsByName['leftDrum']
