@@ -5,12 +5,12 @@ window.Framer.Defaults.DeviceView = {
   "deviceScale" : -1,
   "orientation" : 0,
   "contentScale" : 1,
-  "deviceType" : "iphone-5s-silver-hand"
+  "deviceType" : "iphone-6-silver-hand"
 };
 
 window.FramerStudioInfo = {
   "deviceImagesUrl" : "file:\/\/\/Applications\/Framer%20Studio.app\/Contents\/Resources\/DeviceImages\/",
-  "documentTitle" : "framerKit.framer"
+  "documentTitle" : "RainbowCal_withModules.framer"
 };
 
 Framer.Device = new Framer.DeviceView();

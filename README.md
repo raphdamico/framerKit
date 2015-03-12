@@ -7,9 +7,7 @@ Let me know what you think [@raphdamico](http://twitter.com/raphdamico).
 
 
 #Demos 
-### [Rainbow Calendar](http://share.framerjs.com/umsyjs06uwfa/)
-(Also uses moment.js)
-
+### [Rainbow Calendar (+ moment.js)](http://share.framerjs.com/umsyjs06uwfa/)
 ### [Kitchen Sink](http://share.framerjs.com/fjbvhd9p9vcd/)
 
 

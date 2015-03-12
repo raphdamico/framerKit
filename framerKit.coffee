@@ -375,6 +375,9 @@ exports.TableViewRow = (params) ->
 
 	@listItemContainer.updateLabel = (newText) =>
 		@listItem.html = newText
+
+	@listItemContainer.selected = () =>
+		return @selected
 			
 	@listItemContainer.updateLabel(params.name)
 
@@ -412,8 +415,9 @@ exports.TableView = (params) ->
 		newButton.superLayer = @buttonGroupContainer
 
 	attachRadioButtonValidation = (buttonArray) =>
+		buttonGroupContainer = @buttonGroupContainer
 		for buttonClicked, indexOfButtonClicked in buttonArray
-			buttonClicked.deselect({supressEvents: true, instant: true})
+			buttonClicked.deselect({supressEvents: true})
 			# Creates a closure to save the index of the button we're dealing with
 			do (buttonClicked, indexOfButtonClicked) -> 
 				# Listen for events and change other buttons in response
@@ -422,9 +426,28 @@ exports.TableView = (params) ->
 						if otherButtonIndex != indexOfButtonClicked
 							# Do stuff to the other buttons
 							otherButton.deselect({suppressEvents: true})
+					buttonGroupContainer.emit "DidChange", { selected: indexOfButtonClicked, numSelected: 1, buttons: buttonArray }
+
+	attachDefaultValidation = (buttonArray) =>
+		# Just emits the new values
+		buttonGroupContainer = @buttonGroupContainer
+		for buttonClicked, indexOfButtonClicked in buttonArray
+			buttonClicked.deselect({supressEvents: true})
+			# Creates a closure to save the index of the button we're dealing with
+			do (buttonClicked, indexOfButtonClicked) -> 
+				# Listen for events and change other buttons in response
+				buttonClicked.on 'DidChange', (event) =>
+					numSelected = 0
+					tableViewStates = []		
+					for button in buttonArray
+						tableViewStates.push(button.selected())
+						if button.selected() then numSelected++
+					buttonGroupContainer.emit "DidChange", { selected: tableViewStates, numSelected: numSelected, buttons: buttonArray }
 
 	if params.validation == 'radio'
 		attachRadioButtonValidation(@buttonArray)
+	else 
+		attachDefaultValidation(@buttonArray)
 		
 	return @buttonGroupContainer
 
@@ -470,7 +493,7 @@ quantize = (input, stepSize) ->
 
 ## The items in the picker
 
-Drum = (parentDrumLayer, listName, listItems, params) ->
+Drum = (parentDrumLayer, drumName, listItems, params) ->
 	
 	# Setup variables
 	@parentDrumLayer = parentDrumLayer
@@ -488,7 +511,7 @@ Drum = (parentDrumLayer, listName, listItems, params) ->
 
 	# Set up content of list 		
 	listItems = listItems
-	@name = listName
+	@name = drumName
 	@index = 0
 	@val = listItems[@index]
 	@velocity = 0
@@ -601,7 +624,7 @@ Drum = (parentDrumLayer, listName, listItems, params) ->
 		clearInterval(intervalToupdateDrumAppearance)
 
 		# Emit after all movement ends in the list
-		@drumContainer.emit("DrumFinishedChanging", {list: listName, index: @index, value: @val})
+		@drumContainer.emit("DrumFinishedChanging", {list: drumName, index: @index, value: @val})
 
 	updateDrumAppearance = =>
 		itemsInDrum = 4
@@ -636,7 +659,7 @@ Drum = (parentDrumLayer, listName, listItems, params) ->
 	updateDrumValues = (newIndex) =>
 		@index = newIndex
 		@val = listItems[@index]
-		@drumContainer.emit("DrumDidChange", {list: listName, index: @index, value: @val})
+		@drumContainer.emit("DrumDidChange", {list: drumName, index: @index, value: @val})
 	
 	# Render for the first time		
 	updateDrumAppearance()
