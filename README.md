@@ -57,7 +57,7 @@ drumObject = {
 
 Notes:
 
-* Pickers fire the following events: `"PickerDidChange"` `""PickerFinishedChanging"`, which can be used just as you would a normal Framer event, e.g.:
+* Pickers fire the following events: `'PickerStartedMoving'` `'PickerDidChange'` `'PickerFinishedChanging'`, which can be used just as you would a normal Framer event, e.g.:
 ```
 yourPicker.on 'PickerDidChange', (drums, layer)->
 	## Do some stuff
