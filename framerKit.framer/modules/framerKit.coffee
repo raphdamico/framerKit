@@ -413,6 +413,7 @@ exports.TableView = (params) ->
 
 	attachRadioButtonValidation = (buttonArray) =>
 		for buttonClicked, indexOfButtonClicked in buttonArray
+			buttonClicked.deselect({supressEvents: true, instant: true})
 			# Creates a closure to save the index of the button we're dealing with
 			do (buttonClicked, indexOfButtonClicked) -> 
 				# Listen for events and change other buttons in response

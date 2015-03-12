@@ -24,7 +24,7 @@ container = new Layer
 fancyButton = new framerKit.TableViewRow x: 0, y: 80, name: "Cool switch", icon: 'switch'
 fancyButton.superLayer = container
 
-buttonGroup = new framerKit.TableView y: 248, items: ["Eggs", "Bacon", "Beans"], icon: 'cross'
+buttonGroup = new framerKit.TableView y: 248, items: ["Eggs", "Bacon", "Beans"], icon: 'check'
 radioButtonGroup = new framerKit.TableView y: 594, items: ["Eggs", "Bacon", "Beans"], icon: 'check', validation: 'radio'
 
 toggleDivider = new framerKit.TableViewHeader text: 'Switch', y: 10
