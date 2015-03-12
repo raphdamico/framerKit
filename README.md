@@ -9,6 +9,7 @@ Let me know what you think [@raphdamico](http://twitter.com/raphdamico)!
 #Demos 
 ### [Rainbow Calendar (+ moment.js)](http://share.framerjs.com/0gxtic1jlq2r/)
 ### [Kitchen Sink](http://share.framerjs.com/85gpnmpy4f17/)
+### [Kitchen Sink Blue](http://share.framerjs.com/eklfnhxmq4ya/)
 
 
 # Usage

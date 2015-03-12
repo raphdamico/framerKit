@@ -32,6 +32,7 @@ defaults.tableRowHeight = 88
 defaults.tableRowHorizontalPadding = 20
 defaults.tint = 'grey'
 defaults.lineTint = "rgba(200,200,200,1)"
+defaults.switchTint = '#1DC24B'
 defaults.itemBackground = 'white'
 defaults.listItemTextStyle = {
 	fontSize: "32px"
@@ -46,6 +47,11 @@ defaults.dividerItemTextStyle = {
 	fontWeight: "200"
 	textTransform: 'uppercase'
 }
+defaults.pickerTextStyle = {
+	fontSize: 		"42px"
+	fontFamily: 	"Helvetica Neue"
+	fontWeight: 	"200"
+}
 exports.defaults = defaults
 
 
@@ -57,7 +63,7 @@ exports.defaults = defaults
 Switch = (params) ->
 	params = params or {}
 	_.defaults params, 
-		switchTint: '#1DC24B'
+		switchTint: defaults.switchTint
 		screenWidth: defaults.screenWidth
 		tableRowHeight: defaults.tableRowHeight
 		switchContainerBorder: 4
@@ -287,7 +293,7 @@ exports.TableViewRow = (params) ->
 		selected: true
 		icon: 'check'
 		textColor: defaults.tint
-		switchTint: 'green'
+		switchTint: defaults.switchTint
 		firstItemInList: true # could be first or last
 		lastItemInList: true # could be first or last
 		
@@ -555,9 +561,9 @@ Drum = (parentDrumLayer, drumName, listItems, params) ->
 		listItemLayer.html = li
 		listItemLayer.style =
 			color: 			params.textColor
-			fontFamily: 	"Helvetica Neue"
-			fontWeight: 	"200"
-			fontSize: 		"42px"
+			fontFamily: 	defaults.pickerTextStyle.fontFamily
+			fontWeight: 	defaults.pickerTextStyle.fontWeight
+			fontSize: 		defaults.pickerTextStyle.fontSize
 			lineHeight: 	defaults.tableRowHeight+"px"
 			textAlign: 		params.textAlign
 			padding: 		params.textPadding

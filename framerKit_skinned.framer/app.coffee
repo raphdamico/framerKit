@@ -4,6 +4,15 @@ screenWidth = 640
 screenHeight = 1136
 framerKit.defaults.screenWidth = screenWidth
 
+framerKit.defaults.tint = "#C4F8FF"
+framerKit.defaults.lineTint = "rgba(0,0,0,0)"
+framerKit.defaults.switchTint = "#00DFFC"
+framerKit.defaults.itemBackground = '#00B4CC'
+framerKit.defaults.listItemTextStyle.fontWeight = 100
+framerKit.defaults.listItemTextStyle.fontSize = '48px'
+framerKit.defaults.pickerTextStyle.fontWeight = 100
+framerKit.defaults.pickerTextStyle.fontSize = '60px'
+			
 scrollContainer = new Layer
 	y: 0
 	width: screenWidth
@@ -14,9 +23,10 @@ scrollContainer.scrollVertical = true
 container = new Layer
 	width: screenWidth
 	height: 2136
-	backgroundColor: '#efefef'
+# 	backgroundColor: 
 	superLayer: scrollContainer
-
+container.style = 
+	background: '#343838'
 ###
 	TABLE VIEWS
 ###
@@ -33,6 +43,7 @@ fancyButton.on 'DidChange', (event) ->
 		fancyButton.updateLabel('You did it!')
 
 checklistHeader = new framerKit.TableViewHeader text: 'Checklists (check me!)', y: 248-68
+	
 breakfastChecklist = new framerKit.TableView 
 	y: 248
 	items: ["Eggs", "Bacon", "Beans"]
@@ -103,9 +114,9 @@ sessionLengthPickerDidChange = (drums, layer) ->
 		rightDrum.setIndex(Math.min(drumValuesInHours.indexOf(startTime)+1, drumValuesInHours.length-1))
 		
 	if endTime == startTime
-		sessionLengthPicker.pickerHeader.html = "Session will last " + rightDrum.val
+		sessionLengthPicker.pickerHeader.html = "Duration: " + rightDrum.val
 	else 
-		sessionLengthPicker.pickerHeader.html = "Session will last " + leftDrum.val + " to " + rightDrum.val
+		sessionLengthPicker.pickerHeader.html = "Duration: " + leftDrum.val + " to " + rightDrum.val
 
 sessionLengthPicker.on "PickerFinishedChanging", sessionLengthPickerDidChange
 
@@ -122,3 +133,9 @@ simplePicker.superLayer = container
 simplepickerDivider.superLayer = container
 lesssimplepickerDivider.superLayer = container
 
+headerColor = '#00DFFC'
+checklistHeader.style = color: headerColor
+radioHeader.style = color: headerColor
+toggleDivider.style = color: headerColor
+simplepickerDivider.style = color: headerColor
+lesssimplepickerDivider.style = color: headerColor
