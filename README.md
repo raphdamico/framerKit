@@ -8,6 +8,8 @@ Let me know what you think [@raphdamico](http://twitter.com/raphdamico).
 
 #Demos 
 ### [Rainbow Calendar](http://share.framerjs.com/umsyjs06uwfa/)
+(Also uses moment.js)
+
 ### [Kitchen Sink](http://share.framerjs.com/fjbvhd9p9vcd/)
 
 
@@ -17,7 +19,7 @@ Let me know what you think [@raphdamico](http://twitter.com/raphdamico).
 * In Framer studio add the following lines to your Framer file:
 
 ```
-framerKit = require "framerKit"`
+framerKit = require "framerKit"
 new framerKit.TableViewRow name: "Cool switch", icon: 'switch'
 
 ## Change '750' to the pixel width of whatever device you're working with
